@@ -48,7 +48,7 @@ I actively contribute to robotics and computer vision research through conferenc
 *   **[IROS 2025]** *GSplatLoc: Grounding Keypoint Descriptors into 3D Gaussian Splatting for Improved Visual Localization* [[Page](https://gsplatloc.github.io)]
 *   **[ICRA 2026 Workshop]** *R5DGS: Semantic-Aware 4D Gaussian Splatting with Rigid Body Constraints for Efficient Dynamic Scene Reconstruction* (First Author) [[Page](https://be2rlab.github.io/r5dgs/)]
 *   **[ICRA 2026 Workshop]** *AgentGrounder: Zero-Shot 3D Visual Pointcloud Grounding using Multimodal Language Models* [[Page](https://be2rlab.github.io/AgentGrounder/)]
-*   **[ICML 2026 Workshop]** *Tool-Augmented VLM Agents for Zero-Shot 3D Visual Grounding*
+*   **[ICML 2026 Workshop]** *Tool-Augmented VLM Agents for Zero-Shot 3D Visual Grounding* (also accepted, page coming soon)
 
 🏆 **Awards & Talks:**
 *   🥇 **Best Talk** at the 55th ITMO Scientific and Educational Conference (PPS ITMO 2026).
