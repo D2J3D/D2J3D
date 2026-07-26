@@ -163,6 +163,35 @@
       background: var(--soft);
     }
 
+    .profile-photo {
+      margin: 0 0 18px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, #eef2ff, #f8fafc);
+    }
+
+    .profile-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-photo .photo-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      place-items: center;
+      color: var(--accent);
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.08em;
+    }
+
     .side-card h2 {
       margin: 0 0 8px;
       font-size: 1.04rem;
@@ -490,14 +519,14 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow"> AI / Robotics / Computer Vision</p>
+          <p class="eyebrow">AI / Robotics / Computer Vision</p>
           <h1>Denis Gridusov</h1>
           <p class="lead">
             AI Researcher and Computer Vision Engineer working on multimodal agents for robotics,
             3D scene understanding, dynamic scene reconstruction, and visual localization.
           </p>
           <div class="actions">
-            <a class="button primary" href="/cdn-cgi/l/email-protection#cbacb9a2afafaea5fa8bb2aaa5afaeb3e5b9be">Contact me</a>
+            <a class="button primary" href="mailto:368057@niuitmo.ru">Contact me</a>
             <a class="button" href="https://scholar.google.ru/citations?user=JV1MliYAAAAJ&hl=ru" target="_blank" rel="noopener">Google Scholar</a>
             <a class="button" href="https://github.com/D2J3D" target="_blank" rel="noopener">GitHub</a>
             <a class="button" href="https://t.me/GridDen" target="_blank" rel="noopener">Telegram</a>
@@ -505,6 +534,10 @@
         </div>
 
         <aside class="side-card" aria-label="Profile summary">
+          <figure class="profile-photo">
+            <img src="assets/profile.jpg" alt="Portrait of Denis Gridusov" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="photo-fallback">DG</div>
+          </figure>
           <h2>Profile</h2>
           <p>
             Researcher at the International Laboratory of Embodied Intelligence and Robotics, ITMO University.
@@ -555,9 +588,6 @@
           <p class="section-label">Publications</p>
           <div>
             <h2>Selected conference, workshop, and journal papers.</h2>
-            <!-- <p class="section-note">
-              The list is based on my Google Scholar profile. Pipeline figures are shown directly inside the corresponding publication cards.
-            </p> -->
           </div>
         </div>
 
@@ -726,8 +756,7 @@
             neural scene representations, embodied AI, multimodal agents, and reliable visual localization.
           </p>
           <div class="contact-links">
-            <a class="button primary" href="/cdn-cgi/l/email-protection#0b6c79626f6f6e653a4b726a656f6e7325797e"><span class="__cf_email__" data-cfemail="8ee9fce7eaeaebe0bfcef7efe0eaebf6a0fcfb">368057@niuitmo.ru</span></a>
-            <!-- <a class="button" href="https://t.me/GridDen" target="_blank" rel="noopener">Telegram</a> -->
+            <a class="button primary" href="mailto:368057@niuitmo.ru">368057@niuitmo.ru</a>
             <a class="button" href="https://github.com/D2J3D" target="_blank" rel="noopener">GitHub</a>
             <a class="button" href="https://scholar.google.ru/citations?user=JV1MliYAAAAJ&hl=ru" target="_blank" rel="noopener">Google Scholar</a>
           </div>
@@ -742,7 +771,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
