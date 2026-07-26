@@ -149,6 +149,27 @@
       font-size: 1.14rem;
     }
 
+    .hero-profile {
+      max-width: 760px;
+      margin-top: 28px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+    }
+
+    .hero-profile h2 {
+      margin: 0 0 8px;
+      font-size: 1.04rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-profile p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -163,8 +184,15 @@
       background: var(--soft);
     }
 
+    .side-card.photo-only {
+      width: min(100%, 320px);
+      justify-self: end;
+      padding: 10px;
+      background: #fff;
+    }
+
     .profile-photo {
-      margin: 0 0 18px;
+      margin: 0;
       width: 100%;
       aspect-ratio: 1 / 1;
       border-radius: 16px;
@@ -455,10 +483,17 @@
     }
 
     footer {
-      padding: 30px 0 46px;
+      padding: 46px 0;
       color: var(--muted);
       font-size: 0.92rem;
       text-align: center;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
     }
 
     code {
@@ -479,6 +514,7 @@
 
       .hero { padding-top: 54px; }
       .nav-links { display: none; }
+      .side-card.photo-only { justify-self: start; }
     }
 
     @media (max-width: 620px) {
@@ -491,7 +527,7 @@
     }
 
     @media print {
-      header, .actions, .contact-links { display: none; }
+      header, .actions { display: none; }
       body { color: #111827; }
       .container { width: 100%; }
       .hero, section { padding: 20px 0; }
@@ -511,7 +547,7 @@
         <a href="#experience">Experience</a>
         <a href="#contacts">Contacts</a>
       </div>
-      <button class="button" onclick="window.print()" type="button">Save PDF</button>
+      <!-- <button class="button" onclick="window.print()" type="button">Save PDF</button> -->
     </nav>
   </header>
 
@@ -525,30 +561,26 @@
             AI Researcher and Computer Vision Engineer working on multimodal agents for robotics,
             3D scene understanding, dynamic scene reconstruction, and visual localization.
           </p>
-          <div class="actions">
-            <a class="button primary" href="mailto:368057@niuitmo.ru">Contact me</a>
-            <a class="button" href="https://scholar.google.ru/citations?user=JV1MliYAAAAJ&hl=ru" target="_blank" rel="noopener">Google Scholar</a>
-            <a class="button" href="https://github.com/D2J3D" target="_blank" rel="noopener">GitHub</a>
-            <a class="button" href="https://t.me/GridDen" target="_blank" rel="noopener">Telegram</a>
+          <div class="hero-profile">
+            <h2>Profile</h2>
+            <!-- <p>
+              Researcher at the International Laboratory of Embodied Intelligence and Robotics, ITMO University.
+              Research and R&D experience in robotics perception, Gaussian Splatting and VLM agents.
+            </p> -->
+            <div class="stats">
+              <div class="stat"><strong>6</strong><span>Scholar-indexed works</span></div>
+              <!-- <div class="stat"><strong>16</strong><span>GSplatLoc citations</span></div> -->
+              <div class="stat"><strong>2026</strong><span>B.Sc. completion</span></div>
+              <div class="stat"><strong>3D</strong><span>Vision focus</span></div>
+            </div>
           </div>
         </div>
 
-        <aside class="side-card" aria-label="Profile summary">
+        <aside class="side-card photo-only" aria-label="Profile photo">
           <figure class="profile-photo">
             <img src="assets/profile.jpg" alt="Portrait of Denis Gridusov" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
             <div class="photo-fallback">DG</div>
           </figure>
-          <h2>Profile</h2>
-          <p>
-            Researcher at the International Laboratory of Embodied Intelligence and Robotics, ITMO University.
-            Research and R&D experience in robotics perception, Gaussian Splatting and VLM agents.
-          </p>
-          <div class="stats">
-            <div class="stat"><strong>6</strong><span>Scholar-indexed works</span></div>
-            <div class="stat"><strong>16</strong><span>GSplatLoc citations</span></div>
-            <div class="stat"><strong>2026</strong><span>B.Sc. completion</span></div>
-            <div class="stat"><strong>3D</strong><span>Vision focus</span></div>
-          </div>
         </aside>
       </div>
     </section>
@@ -747,29 +779,26 @@
       </div>
     </section>
 
-    <!-- <section id="contacts">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Open to research-oriented opportunities.</h2>
-          <p>
-            I am especially interested in programs working on robotics, 3D perception,
-            neural scene representations, embodied AI, multimodal agents, and reliable visual localization.
-          </p>
-          <div class="contact-links">
-            <a class="button primary" href="mailto:368057@niuitmo.ru">368057@niuitmo.ru</a>
-            <a class="button" href="https://github.com/D2J3D" target="_blank" rel="noopener">GitHub</a>
-            <a class="button" href="https://scholar.google.ru/citations?user=JV1MliYAAAAJ&hl=ru" target="_blank" rel="noopener">Google Scholar</a>
-          </div>
+  </main>
+<!-- 
+  <footer id="contacts">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Open to research-oriented opportunities.</h2>
+        <p>
+          I am especially interested in programs working on robotics, 3D perception,
+          neural scene representations, embodied AI, multimodal agents, and reliable visual localization.
+        </p>
+        <div class="contact-links">
+          <a class="button primary" href="mailto:368057@niuitmo.ru">368057@niuitmo.ru</a>
+          <a class="button" href="https://github.com/D2J3D" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="https://scholar.google.ru/citations?user=JV1MliYAAAAJ&hl=ru" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="button" href="https://t.me/GridDen" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
-    </section> -->
-  </main>
-
-  <footer>
-    <!-- <div class="container">
-      © <span id="year"></span> Denis Gridusov  .
-    </div> -->
-  </footer>
+      <div class="footer-note">© <span id="year"></span> Denis Gridusov</div>
+    </div>
+  </footer> -->
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
