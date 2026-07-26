@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denis Gridusov — AI Researcher / Computer Vision Engineer</title>
+  <meta name="description" content="Academic portfolio of Denis Gridusov, AI Researcher and Computer Vision Engineer focused on robotics, 3D scene understanding, visual localization, and multimodal agents." />
+  <meta property="og:title" content="Denis Gridusov — AI Researcher / Computer Vision Engineer" />
+  <meta property="og:description" content="Research portfolio for graduate applications: robotics, computer vision, 3D Gaussian Splatting, visual localization, and multimodal agents." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #5f6b7a;
+      --soft: #f6f7f9;
+      --line: #e5e7eb;
+      --line-strong: #d1d5db;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --max: 1060px;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.94rem;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      border-color: var(--text);
+    }
+
+    .button.primary:hover { border-color: var(--accent); filter: brightness(0.96); }
+
+    main { padding-bottom: 56px; }
+
+    .hero {
+      padding: 76px 0 52px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.55fr;
+      gap: 46px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+      font-weight: 800;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.14rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .side-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--soft);
+    }
+
+    .side-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.04rem;
+      letter-spacing: -0.02em;
+    }
+
+    .side-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .stats {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 13px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    section {
+      padding: 52px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type { border-bottom: 0; }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 0.38fr 0.62fr;
+      gap: 32px;
+      margin-bottom: 28px;
+      align-items: start;
+    }
+
+    .section-label {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.55rem);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+    }
+
+    .section-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: #fff;
+    }
+
+    .card.soft { background: var(--soft); }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      color: #374151;
+      font-size: 0.9rem;
+      font-weight: 550;
+    }
+
+    .publication {
+      display: flex;
+      flex-direction: column;
+      min-height: 260px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .venue {
+      display: inline-flex;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.78rem;
+    }
+
+    .year {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .authors {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .authors b { color: var(--text); }
+
+    .pub-description {
+      margin-top: 14px !important;
+      font-size: 0.96rem;
+    }
+
+    .pub-links {
+      margin-top: auto;
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .publication-figure {
+      margin: 0 0 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .publication-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .publication-figure .fallback {
+      display: none;
+      padding: 28px 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border: 1px dashed var(--line-strong);
+      border-radius: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child { border-bottom: 0; }
+
+    .time {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 5px;
+      font-size: 1.06rem;
+    }
+
+    .timeline-item p { margin: 0; color: var(--muted); }
+
+    .award-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .award {
+      padding-left: 16px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .award strong { display: block; }
+    .award span { color: var(--muted); }
+
+    .contact-box {
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      background: var(--soft);
+      text-align: center;
+    }
+
+    .contact-box h2 { max-width: 820px; margin: 0 auto; }
+    .contact-box p { max-width: 760px; margin: 14px auto 0; color: var(--muted); }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    footer {
+      padding: 30px 0 46px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    code {
+      padding: 2px 5px;
+      border-radius: 6px;
+      background: #eef0f3;
+      color: #374151;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-header,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 54px; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      h1 { font-size: 3.2rem; }
+      .actions, .contact-links { flex-direction: column; }
+      .button { width: 100%; }
+      .stats { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    @media print {
+      header, .actions, .contact-links { display: none; }
+      body { color: #111827; }
+      .container { width: 100%; }
+      .hero, section { padding: 20px 0; }
+      .card, .side-card, .contact-box, .stat { break-inside: avoid; }
+      a { color: #111827; text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#top">Denis Gridusov</a>
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contacts">Contacts</a>
+      </div>
+      <button class="button" onclick="window.print()" type="button">Save PDF</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow"> AI / Robotics / Computer Vision</p>
+          <h1>Denis Gridusov</h1>
+          <p class="lead">
+            AI Researcher and Computer Vision Engineer working on multimodal agents for robotics,
+            3D scene understanding, dynamic scene reconstruction, and visual localization.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="/cdn-cgi/l/email-protection#cbacb9a2afafaea5fa8bb2aaa5afaeb3e5b9be">Contact me</a>
+            <a class="button" href="https://scholar.google.ru/citations?user=JV1MliYAAAAJ&hl=ru" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="button" href="https://github.com/D2J3D" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://t.me/GridDen" target="_blank" rel="noopener">Telegram</a>
+          </div>
+        </div>
+
+        <aside class="side-card" aria-label="Profile summary">
+          <h2>Profile</h2>
+          <p>
+            Researcher at the International Laboratory of Embodied Intelligence and Robotics, ITMO University.
+            Research and R&D experience in robotics perception, Gaussian Splatting, VLM agents, object detection, and anomaly detection.
+          </p>
+          <div class="stats">
+            <div class="stat"><strong>6</strong><span>Scholar-indexed works</span></div>
+            <div class="stat"><strong>16</strong><span>GSplatLoc citations</span></div>
+            <div class="stat"><strong>2026</strong><span>B.Sc. completion</span></div>
+            <div class="stat"><strong>3D</strong><span>Vision focus</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Research agenda</p>
+          <div>
+            <h2>Perception systems for robots that understand 3D environments.</h2>
+            <p class="section-note">
+              My work connects geometric representations, neural rendering, and multimodal reasoning for robotics applications.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card soft">
+            <h3>Visual localization</h3>
+            <p>Grounding local keypoint descriptors into 3D Gaussian Splatting representations to improve localization in complex indoor/outdoor scenes.</p>
+          </article>
+          <article class="card soft">
+            <h3>3D / 4D scene understanding</h3>
+            <p>Semantic-aware Gaussian Splatting and dynamic reconstruction with rigid-body constraints for efficient scene representation.</p>
+          </article>
+          <article class="card soft">
+            <h3>Multimodal agents</h3>
+            <p>Tool-augmented VLM agents for zero-shot 3D visual grounding and point cloud understanding in robotics-oriented settings.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Publications</p>
+          <div>
+            <h2>Selected conference, workshop, and journal papers.</h2>
+            <p class="section-note">
+              The list is based on my Google Scholar profile. Pipeline figures are shown directly inside the corresponding publication cards.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card publication">
+            <figure class="publication-figure">
+              <img src="assets/gsplatloc-pipeline.png" alt="GSplatLoc pipeline figure" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <div class="fallback">Add image: <code>assets/gsplatloc-pipeline.png</code></div>
+            </figure>
+            <div class="meta"><span class="venue">IROS 2025</span><span class="year">2025 · 16 citations</span></div>
+            <h3>GSplatLoc: Grounding Keypoint Descriptors into 3D Gaussian Splatting for Improved Visual Localization</h3>
+            <div class="authors">G. Sidorov, M. Mohrat, <b>D. Gridusov</b>, R. Rakhimov, S. Kolyubin</div>
+            <p class="pub-description">Visual localization method that connects keypoint descriptors with 3D Gaussian Splatting scene representations.</p>
+            <div class="pub-links">
+              <a href="https://gsplatloc.github.io" target="_blank" rel="noopener">Project page</a>
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=ru&user=JV1MliYAAAAJ&citation_for_view=JV1MliYAAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </article>
+
+          <article class="card publication">
+            <figure class="publication-figure">
+              <img src="assets/r5dgs-pipeline.png" alt="R5DGS pipeline figure" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <div class="fallback">Add image: <code>assets/r5dgs-pipeline.png</code></div>
+            </figure>
+            <div class="meta"><span class="venue">ICRA 2026 Workshop</span><span class="year">2026 · First author</span></div>
+            <h3>R5DGS: Semantic-Aware 4D Gaussian Splatting with Rigid Body Constraints for Efficient Dynamic Scene Reconstruction</h3>
+            <div class="authors"><b>D. Gridusov</b>, M. Popov, S. Kolyubin</div>
+            <p class="pub-description">Dynamic reconstruction approach combining semantic awareness, 4D Gaussian Splatting, and rigid-body constraints.</p>
+            <div class="pub-links">
+              <a href="https://be2rlab.github.io/r5dgs/" target="_blank" rel="noopener">Project page</a>
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=ru&user=JV1MliYAAAAJ&citation_for_view=JV1MliYAAAAJ:9yKSN-GCB0IC" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </article>
+
+          <article class="card publication">
+            <figure class="publication-figure">
+              <img src="assets/agentgrounder-pipeline.png" alt="AgentGrounder pipeline figure" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <div class="fallback">Add image: <code>assets/agentgrounder-pipeline.png</code></div>
+            </figure>
+            <div class="meta"><span class="venue">ICRA 2026 Workshop</span><span class="year">2026</span></div>
+            <h3>AgentGrounder: Zero-Shot 3D Visual Pointcloud Grounding using Multimodal Language Models</h3>
+            <div class="authors">C. Huynh, M. Popov, <b>D. Gridusov</b>, S. Kolyubin</div>
+            <p class="pub-description">Zero-shot 3D visual grounding in point clouds using multimodal language models and agentic reasoning.</p>
+            <div class="pub-links">
+              <a href="https://be2rlab.github.io/AgentGrounder/" target="_blank" rel="noopener">Project page</a>
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=ru&user=JV1MliYAAAAJ&citation_for_view=JV1MliYAAAAJ:2osOgNQ5qMEC" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </article>
+
+          <article class="card publication">
+            <div class="meta"><span class="venue">ICML 2026 Workshop</span><span class="year">2026</span></div>
+            <h3>Tool-Augmented VLM Agents for Zero-Shot 3D Visual Grounding</h3>
+            <div class="authors">C. Huynh, M. Popov, <b>D. Gridusov</b>, S. Kolyubin</div>
+            <p class="pub-description">Tool-augmented agent framework for VLM-based zero-shot grounding over 3D visual data.</p>
+            <div class="pub-links">
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=ru&user=JV1MliYAAAAJ&citation_for_view=JV1MliYAAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener">Scholar</a>
+              <a href="#contacts">Page coming soon</a>
+            </div>
+          </article>
+
+          <article class="card publication">
+            <figure class="publication-figure">
+              <img src="assets/gsplatloc-journal-pipeline.png" alt="Journal paper pipeline figure" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <div class="fallback">Add image: <code>assets/gsplatloc-journal-pipeline.png</code></div>
+            </figure>
+            <div class="meta"><span class="venue">Journal</span><span class="year">2025</span></div>
+            <h3>Grounding Keypoint Descriptors into 3D Gaussian Splatting for Visual Localization in Dynamic Indoor/Outdoor Environments</h3>
+            <div class="authors">M. Mohrat, G. K. Sidorov, <b>D. D. Gridusov</b>, S. A. Kolyubin</div>
+            <p class="pub-description">Journal article in <i>Izvestiya vuzov. Priborostroenie</i>, 68(9), 781–791.</p>
+            <div class="pub-links">
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=ru&user=JV1MliYAAAAJ&citation_for_view=JV1MliYAAAAJ:u-x6o8ySG0sC" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Skills</p>
+          <div>
+            <h2>Research engineering stack.</h2>
+            <p class="section-note">Scientific prototyping and applied computer vision R&D for industrial partners.</p>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">YOLO / object detection</span>
+          <span class="tag">ROS2</span>
+          <span class="tag">Docker</span>
+          <span class="tag">PySpark</span>
+          <span class="tag">Polars</span>
+          <span class="tag">NeRF / 3DGS</span>
+          <span class="tag">Point clouds</span>
+          <span class="tag">Anomaly detection</span>
+          <span class="tag">VLM agents</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Background</p>
+          <div>
+            <h2>Academic research with applied R&D experience.</h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Experience & education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="time">Researcher</div>
+                <div>
+                  <h3>International Laboratory of Embodied Intelligence and Robotics, ITMO</h3>
+                  <p>AI Researcher / ML Engineer working on robotics perception, multimodal agents, 3D scene understanding, and visual localization.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="time">CV Engineer</div>
+                <div>
+                  <h3>Allsee.team</h3>
+                  <p>Commercial computer vision engineering experience across applied detection and analytics tasks.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="time">2026</div>
+                <div>
+                  <h3>B.Sc. in Robotics and Artificial Intelligence · ITMO University</h3>
+                  <p>Faculty of Control Systems and Robotics.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card soft">
+            <h3>Awards & talks</h3>
+            <div class="award-list" style="margin-top: 18px;">
+              <div class="award"><strong>Best Talk</strong><span>55th ITMO Scientific and Educational Conference, PPS ITMO 2026.</span></div>
+              <div class="award"><strong>Best Young Scientist Talk</strong><span>XV Congress of Young Scientists at ITMO, CMU ITMO 2026.</span></div>
+              <div class="award"><strong>Winner</strong><span>School of Mathematical Modeling at ITMO, 2025.</span></div>
+            </div>
+
+            <h3 style="margin-top: 28px;">Additional education</h3>
+            <div class="tags" style="margin-top: 12px;">
+              <span class="tag">Yandex Education · Generative AI and Robotics · 2025</span>
+              <span class="tag">ITMO & Innopolis · Data Analysis Methods · 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Open to research-oriented Master's opportunities abroad.</h2>
+          <p>
+            I am especially interested in programs and labs working on robotics, 3D perception,
+            neural scene representations, embodied AI, multimodal agents, and reliable visual localization.
+          </p>
+          <div class="contact-links">
+            <a class="button primary" href="/cdn-cgi/l/email-protection#0b6c79626f6f6e653a4b726a656f6e7325797e"><span class="__cf_email__" data-cfemail="8ee9fce7eaeaebe0bfcef7efe0eaebf6a0fcfb">[email&#160;protected]</span></a>
+            <a class="button" href="https://t.me/GridDen" target="_blank" rel="noopener">Telegram</a>
+            <a class="button" href="https://github.com/D2J3D" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://scholar.google.ru/citations?user=JV1MliYAAAAJ&hl=ru" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Denis Gridusov. Static portfolio page for graduate applications.
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
