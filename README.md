@@ -55,12 +55,6 @@ I actively contribute to robotics and computer vision research through conferenc
 *   🥇 **Best Young Scientist Talk** at the XV Congress of Young Scientists at ITMO (CMU ITMO 2026).
 *   🥇 **Winner** of the School of Mathematical Modeling at ITMO (2025).
 
-## 💼 Work Experience
-
-- **AI Researcher / ML Engineer** @ *International Laboratory of Embodied Intelligence and Robotics, ITMO*
-
-- **CV Engineer** @ *Allsee.team*
-
 ## 🎓 Education & Certifications
 
 - **B.Sc. in Robotics and Artificial Intelligence** | *ITMO University* (2026)
